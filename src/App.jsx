@@ -1,12 +1,15 @@
-import { useState } from 'react'
-import './App.css'
+import "./App.css";
+import CurrentLocationWeather from "./components/CurrentLocationWeather";
+import SearchCityWeather from "./components/SearchCityWeather";
 
-function App() {
+export default function App() {
   return (
-    <>
-      <h1>react setup</h1>
-    </>
-  )
+    <div className="App">
+      <div className="weather-container">
+        
+        <SearchCityWeather />
+        <CurrentLocationWeather />
+      </div>
+    </div>
+  );
 }
-
-export default App

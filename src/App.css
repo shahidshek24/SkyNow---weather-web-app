@@ -1,0 +1,120 @@
+body {
+    background: url('assets/background.jpg') no-repeat center center/cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    overflow-x: hidden; 
+}
+
+.App {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px; 
+    box-sizing: border-box;
+}
+
+.weather-container {
+    display: flex;
+    flex-direction: column; 
+    width: 100%;
+    max-width: 900px; 
+    gap: 1.5rem; 
+    background: rgba(0, 0, 0, 0.4);
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px); 
+}
+
+
+.weather-card {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center; 
+    width: auto; 
+    min-width: 0; 
+    box-sizing: border-box;
+}
+
+.weather-card h2 {
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.search-bar input {
+    padding: 0.75rem;
+    border: none;
+    outline: none;
+    border-radius: 6px 0 0 6px;
+    flex-grow: 1; 
+    min-width: 0;
+    font-size: 1rem;
+}
+
+.search-bar button {
+    padding: 0.75rem 1rem;
+    background: #ffba00;
+    border: none;
+    border-radius: 0 6px 6px 0;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.search-bar button:hover {
+    background: #e6a800;
+}
+
+.temp {
+    font-size: 3rem; 
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+.details {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+}
+
+
+@media (min-width: 768px) {
+    
+    .weather-container {
+        flex-direction: row; /* Switch back to horizontal layout */
+        gap: 2rem; /* Restore desktop gap */
+        padding: 2rem;
+    }
+
+    .weather-card {
+        flex: 1; 
+        min-width: 250px; 
+    }
+}
+
+/* Animations */
+.weather-card {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
